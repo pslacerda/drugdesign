@@ -2,11 +2,32 @@
 test/virtual_screening/vina/spark/analysis
 test/virtual_screening/vina/spark/*.log
 test/virtual_screening/vina/spark/config.ini
-.idea
-.idea/drugdesign.iml
-.idea/misc.xml
-.idea/modules.xml
-.idea/vcs.xml
-.idea/workspace.xml
-molecular_dynamics/gromacs/spark/__pycache__/
+.idea/
+__pycache__/
 
+# Object files
+*.o
+*.ko
+
+# Libraries
+*.lib
+*.a
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+vs_main
+
+#Directory
+build/
+Debug/
+
+#TXT files
+src/*.txt
