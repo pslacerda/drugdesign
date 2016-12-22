@@ -1,6 +1,6 @@
-====================================================================================
-					drugdesign
-====================================================================================
+drugdesign
+==========
+
 This project was idealized as a collaborative endeavor in the drug design area.
 
 The current build allows users to perform Virtual Screening assays by employing the following software:
@@ -20,8 +20,8 @@ Analysis can be done by using both experimental (from the PDB database) and theo
 2. Big Data Analytics through Apache Spark. 
 Virtual Screening usually outputs a considerable amount of data, by using Spark this data can be analyzed more efficiently.
 
-====================================================================================
-		Understanding drugdesign
-====================================================================================
+Understanding drugdesign
+------------------------
+
 The project was decomposed into branches in order to facilitate organization and allow for flexible development.
-For more information, please see the READMINE file under each specific directory.
+For more information, please see the README file under each specific directory.
