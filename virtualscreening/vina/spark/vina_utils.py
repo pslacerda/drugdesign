@@ -87,12 +87,12 @@ def get_file_name_sorted_energy():
 
 def get_separator_filename_mode():
     """
-	Returns the separator file mode. It means a way to separate receptor_ligand and mode
+    Returns the separator file mode. It means a way to separate receptor_ligand and mode
     Example:
         >>> get_separator_filename_mode()
     @return: the separator file mode
     @rtype: string        
-	"""
+    """
     return '+----+'
 
 
@@ -111,8 +111,8 @@ def get_directory_pdbqt_analysis(path_analysis):
 
 def get_structure_file_name(myfile):
     """
-	This function obtains the name of myfile without filename extension
-	"""
+    This function obtains the name of myfile without filename extension
+    """
     path, filename = ntpath.split(myfile)
     name = str(filename.split(".")[0])  # remove .pdbqt
     return name
@@ -120,8 +120,8 @@ def get_structure_file_name(myfile):
 
 def get_name_model_pdb(myfile):
     """
-	This function obtains the name of myfile without filename extension
-	"""
+    This function obtains the name of myfile without filename extension
+    """
     path, filename = ntpath.split(myfile)
     name = str(filename.split(".")[0])  # remove .pdb
     return name
@@ -129,8 +129,8 @@ def get_name_model_pdb(myfile):
 
 def get_name_model_pdbqt(myfile):
     """
-	This function obtains the name of myfile without filename extension
-	"""
+    This function obtains the name of myfile without filename extension
+    """
     path, filename = ntpath.split(myfile)
     name = str(filename.split(".")[0])  # remove .pdbqt
     return name
@@ -138,8 +138,8 @@ def get_name_model_pdbqt(myfile):
 
 def get_name_receptor_pdb(myfile):
     """
-	This function obtains the name of myfile without filename extension
-	"""
+    This function obtains the name of myfile without filename extension
+    """
     path, filename = ntpath.split(myfile)
     name = str(filename.split(".")[0])  # remove .pdb
     return name
@@ -147,8 +147,8 @@ def get_name_receptor_pdb(myfile):
 
 def get_name_receptor_pdbqt(myfile):
     """
-	This function obtains the name of myfile without filename extension
-	"""
+    This function obtains the name of myfile without filename extension
+    """
     path, filename = ntpath.split(myfile)
     name = str(filename.split(".")[0])  # remove .pdbqt
     return name
@@ -156,9 +156,9 @@ def get_name_receptor_pdbqt(myfile):
 
 def get_ligand_from_receptor_ligand_model(receptor_ligand_model):
     """
-	This function obtains the name of ligand based on receptor_ligand_model
-	Example of input: compl_ns3pro_dm_0_-_NuBBE_485_obabel_3D+----+20
-	"""
+    This function obtains the name of ligand based on receptor_ligand_model
+    Example of input: compl_ns3pro_dm_0_-_NuBBE_485_obabel_3D+----+20
+    """
     separator_model = get_separator_filename_mode()
     separator_receptor = "_-_"
     string_ref = receptor_ligand_model
@@ -211,7 +211,7 @@ def loading_pdb_2_list(pdb_path_file):
     return list_ret
 
 
-"""	Extract the numbers. GROMACS uses nm and autodock vina uses A as units.
+"""    Extract the numbers. GROMACS uses nm and autodock vina uses A as units.
 Therefore, values from gromacs are multiplied by 10.
 """
 
