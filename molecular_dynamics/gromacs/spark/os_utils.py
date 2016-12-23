@@ -1,10 +1,28 @@
 import os
+import urllib2
 
 
 def make_directory(directory):
     if not os.path.exists(directory):
         os.makedirs(directory)
 
+
+def download_pdb(pdb, destination=None):
+    """Downloads a PDB file.
+
+    :param pdb: pdb code
+    :param destination: destination filename or directory
+
+    """
+    pdb = pdb.upper() # not really necessary but increases naming consistency
+    url = "https://files.rcsb.org/download/%s.pdb" % pdb
+    if destination is None:
+        destination = os.getcwd()
+    if os.path.isdir(destination):
+        destination = os.path.join(destination, "%s.pdb" % pdb)
+    source = urllib2.urlopen(url)
+    destination = open(destination, 'w')
+    destination.write(source.read())
 
 def preparing_path(ref_path):
     """
@@ -14,6 +32,7 @@ def preparing_path(ref_path):
     if not last_char == os.sep:
         ref_path += os.sep
     return ref_path
+
 
 def check_file_exists(full_path):
     if not os.path.isfile(full_path):

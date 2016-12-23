@@ -6,7 +6,7 @@ from pyspark.sql import SQLContext, Row
 from pbox_description import pbox_description
 from datetime import datetime
 from subprocess import Popen, PIPE
-from os_utils import check_file_exists
+from os_utils import check_file_exists, download_pdb
 from vina_utils import get_value_from_box_center, get_value_from_box_size, format_output_file_to_dict, calculate_avg_value
 from json_utils import create_json_file
 
@@ -68,11 +68,7 @@ if __name__ == '__main__':
 
 
         # Downloads the receptor pdb file
-        command = ''.join(["wget http://www.rcsb.org/pdb/files/",
-                            prepare_box_obj.get_pdb_id(),
-                           ".pdb >/dev/null 2>/dev/null"])
-        proc = Popen(command, shell=True, stdout=PIPE)
-        proc.communicate()
+        download_pdb(prepare_box_obj.get_pdb_id())
 
         # Removes waters, ligands and metals with ADT
         command = ''.join([pythonsh.value,
